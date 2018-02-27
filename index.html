@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>iwindow</title>
+    <link rel="stylesheet" href="iwindow.css">
+  </head>
+  <body>
+
+<div class="iwindow-bg" >
+  <div class="iwindow-wrapper">
+    <div class="iwindow-toolbar">
+      <div class="iwindow-title">
+        窗体标题
+      </div>
+      <div class="iwindow-tool">
+        <span class="close">
+          <img src="close.svg" alt="">
+        </span>
+      </div>
+    </div>
+    <div class="iwindow-content">
+      <div >
+        <h1>窗体内容</h1>
+      </div>
+    </div>
+  </div>
+</div>
+<div  class="iwindow-template">
+  <div class="aaa">
+    <h1>窗体内容ksajfljaj;f;asfj;asjf;</h1>
+    <button type="button" name="button" id="newWindow">新建窗口</button>
+  </div>
+  <div class="bbb">
+    <form class="" action="index.html" method="post">
+      <input type="text" name="" value="sfsdf">
+      <button type="button" name="button">button</button>
+      <select class="" name="">
+        <option value="">aaaa</option>
+        <option value="">bbbb</option>
+      </select>
+    </form>
+  </div>
+</div>
+    <script src="jquery.js" charset="utf-8"></script>
+    <script src="iwindow.js" charset="utf-8"></script>
+    <script type="text/javascript">
+       $('.aaa').iwindow('show');
+       $('#newWindow').click(function(){
+         $('.bbb').iwindow('show',{
+           dragable:true,
+           title:'hello,world'
+         })
+       })
+    </script>
+  </body>
+</html>
