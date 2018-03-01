@@ -17,7 +17,8 @@
       var defaults = {
         size:'normal',    //small,big,full
         title:'窗口标题',
-        dragable:false
+        dragable:false,
+        titleBgColor:null
       };
 
       var options = $.extend(defaults, options);
@@ -31,11 +32,16 @@
 
         var $bg = $(iwindow.bgTemplate);
         var $wrapper = $(iwindow.wrapperTemplate);
+        var $title = $wrapper.find('.iwindow-title');
+
         $wrapper.find('.iwindow-title').html(options.title);
         $wrapper.find('.iwindow-content').append($this)
         $wrapper.find('.iwindow-tool .close').click(function(){
           iwindow.hide.apply(iwindowInstance);
         });
+        if(options.titleBgColor){
+          $title.css('backgroundColor', options.titleBgColor);
+        }
         $bg.append($wrapper);
         $(document.body).append($bg)
 
@@ -44,7 +50,7 @@
         $this.data('iwindow',data);
 
         if(options.dragable){
-          var $title = $wrapper.find('.iwindow-title');
+
           var titleId = 'iwindow-title-' + iwindow.currentZIndex;
           $title.addClass('dragable').attr('data-id', titleId);
           var isDragging = false, prevX = null, prevY = null;

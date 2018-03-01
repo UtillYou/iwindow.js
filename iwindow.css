@@ -12,14 +12,10 @@
 }
 .iwindow-wrapper{
   position: absolute;
-  box-shadow: 2px 2px 4px rgba(0,0,0,0.4);
-  border-radius: 3px;
+  box-shadow: 2px 4px 6px 1px rgba(50, 50, 50, 0.14);
 }
 .iwindow-toolbar{
   height: 30px;
-  background-color: rgb(0,155,219);
-  border-top-right-radius: 3px;
-  border-top-left-radius: 3px;
   position: relative;
 }
 .iwindow-title.dragable{
@@ -36,6 +32,9 @@
   left:0px;
   top:0px;
   z-index: 1;
+  background-color: rgb(0,155,219);
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
 }
 .iwindow-tool{
   position: absolute;
@@ -58,6 +57,9 @@
 .iwindow-tool span:hover{
   background-color: rgba(255,255,255,.5);
 }
+.iwindow-tool span.close{
+  border-top-right-radius: 3px;
+}
 .iwindow-tool span.close:hover{
   background-color: rgba(255,0,0,.8);
 }
@@ -67,4 +69,6 @@
 }
 .iwindow-content{
   background-color: white;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
 }
